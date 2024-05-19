@@ -8,14 +8,14 @@ from stable_baselines3.common.env_util import make_vec_env
 from stable_baselines3.common.results_plotter import ts2xy
 from stable_baselines3.common.evaluation import evaluate_policy
 
-model_dir = "/models/v01"
+model_dir = "../models/v01"
 
 #env = gym.make("LunarLander-v2", continuous=False)
 
 env = make_vec_env("LunarLander-v2", n_envs=16, monitor_dir=model_dir)
 
 # Create the PPO model
-model = PPO("MlpPolicy", env, verbose=0, tensorboard_log="/tb_logs/")
+model = PPO("MlpPolicy", env, verbose=0, tensorboard_log="../tb_logs/")
 
 # Load the model
 # loaded_model = PPO.load("lunar_lander_model")
